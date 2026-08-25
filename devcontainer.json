@@ -1,0 +1,20 @@
+{
+  "name": "landing-page",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ritwickdey.LiveServer"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 5500],
+  "portsAttributes": {
+    "3000": { "label": "serve", "onAutoForward": "openPreview" },
+    "5500": { "label": "Live Server", "onAutoForward": "openPreview" }
+  },
+  "postCreateCommand": "npm install --global serve",
+  "postAttachCommand": {
+    "server": "serve . -l 3000"
+  }
+}
